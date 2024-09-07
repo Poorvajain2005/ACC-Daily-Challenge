@@ -1,0 +1,20 @@
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    char input[100];
+    int length = 0;
+
+    cout << "Enter a string: ";
+    cin.getline(input, 100); 
+
+    
+    while (input[length] != '\0') {
+        length++;
+    }
+
+    cout << "Length of the string: " << length << endl;
+
+    return 0;
+}
