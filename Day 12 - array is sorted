@@ -1,0 +1,24 @@
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+bool isSorted(const vector<int>& arr) {
+    for (int i = 0; i < arr.size() - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    vector<int> arr = {1, 2, 3, 4, 5};
+    cout << boolalpha << isSorted(arr) << endl; // Output: true
+
+    vector<int> arr2 = {5, 3, 2, 1};
+    cout << boolalpha << isSorted(arr2) << endl; // Output: false
+
+    return 0;
+}
