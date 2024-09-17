@@ -1,0 +1,34 @@
+
+#include <iostream>
+using namespace std;
+
+int findFrequency(int Arr[], int N, int X) {
+    int frequency = 0;
+    for (int i = 0; i < N; i++) {
+        if (Arr[i] == X) {
+            frequency++;
+        }
+    }
+    return frequency;
+}
+
+int main() {
+    int N; 
+    cout << "Enter the size of the array: ";
+    cin >> N;
+
+    int Arr[N]; 
+    cout << "Enter the elements of the array:\n";
+    for (int i = 0; i < N; i++) {
+        cin >> Arr[i];
+    }
+
+    int X; 
+    cout << "Enter the integer to find frequency: ";
+    cin >> X;
+
+    int frequency = findFrequency(Arr, N, X);
+    cout << "Frequency of " << X << " in the array is: " << frequency << endl;
+
+    return 0;
+}
