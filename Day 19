@@ -1,0 +1,48 @@
+
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+
+class Solution {
+public:
+    std::vector<int> twoSum(std::vector<int>& nums, int target) {
+        std::unordered_map<int, int> numMap;
+        
+        for (int i = 0; i < nums.size(); ++i) {
+            int complement = target - nums[i];
+            if (numMap.find(complement) != numMap.end()) {
+                return {numMap[complement], i};
+            }
+            numMap[nums[i]] = i;
+        }
+        
+        return {};
+    }
+};
+
+int main() {
+    Solution solution;
+    
+    std::vector<int> nums;
+    int target;
+    int numSize;
+    
+    std::cout << "Enter the size of the array: ";
+    std::cin >> numSize;
+    
+    std::cout << "Enter the elements of the array: ";
+    for (int i = 0; i < numSize; ++i) {
+        int num;
+        std::cin >> num;
+        nums.push_back(num);
+    }
+    
+    std::cout << "Enter the target sum: ";
+    std::cin >> target;
+    
+    std::vector<int> result = solution.twoSum(nums, target);
+    
+    std::cout << "Output: [" << result[0] << ", " << result[1] << "]" << std::endl;
+    
+    return 0;
+}
